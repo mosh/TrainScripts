@@ -1,0 +1,31 @@
+var hi = "/Users/JohnMoshakis/Documents/develop/HeaderImporter/HeaderImporter.exe";
+var fxBaseFolder = '/Users/JohnMoshakis/Documents/Elements/Nougat SDKs'; // where the SDK .fx files are
+var developerFolder = '/Applications/Xcode.app/Contents/Developer';
+
+include("generate.train");
+
+
+iOSSdkVersion="9.2" ;  // optionally, pick a target SDK
+OSXSdkVersion="10.11"; // optionally, pick a target SDK
+
+processOSXLibrary({
+    library: "libsqlite3.dylib",
+    headers: ["sqlite3.h;"],
+    explicitHeaders: true,
+    link: ["sqlite3"],
+    includePaths: ["$(OSXSdk)/usr/include/"],
+    namespacePrefix: "libsqlite3",
+    targetFolder: "/Users/JohnMoshakis/Documents/develop/TrainOutput",
+    architectures: standardOSXArchitectures()
+});
+
+processiOSLibrary({
+    library: "libsqlite3.dylib",
+    headers: ["sqlite3.h;"],
+    explicitHeaders: true,
+    link: ["sqlite3"],
+    includePaths: ["$(iOSSdk)/usr/include/"],
+    namespacePrefix: "libsqlite3",
+    targetFolder: "/Users/JohnMoshakis/Documents/develop/TrainOutput",
+    architectures: standardiOSArchitectures()
+});

@@ -1,0 +1,20 @@
+var hi = "/Users/JohnMoshakis/Documents/develop/HeaderImporter/HeaderImporter.exe";
+var fxBaseFolder = '/Users/JohnMoshakis/Documents/Elements/Nougat SDKs'; // where the SDK .fx files are
+var developerFolder = '/Applications/Xcode.app/Contents/Developer';
+
+include("generate.train");
+
+iOSSdkVersion="9.2" ;  // optionally, pick a target SDK
+OSXSdkVersion="10.11"; // optionally, pick a target SDK
+
+processOSXLibrary({
+    library: "libJNWLibrary.a",
+    headers: ["DemoImageCache.h;JNWClipView.h;JNWCollectionView+Private.h;JNWCollectionView.h;JNWCollectionViewCell+Private.h;JNWCollectionViewCell.h;JNWCollectionViewData.h;JNWCollectionViewDocumentView.h;JNWCollectionViewFramework.h;JNWCollectionViewGridLayout.h;JNWCollectionViewLayout+Private.h;JNWCollectionViewLayout.h;JNWCollectionViewListLayout.h;JNWCollectionViewReusableView+Private.h;JNWCollectionViewReusableView.h;JNWLibrary.h;JNWScrollView.h;NSImage+DemoAdditions.h;NSIndexPath+JNWAdditions.h
+"],
+    explicitHeaders: true,
+    link: ["JNWLibrary"],
+    includePaths: ["/Users/JohnMoshakis/Documents/develop/Xcode/JNWLibrary/JNWLibrary"],
+    namespacePrefix: "JNW",
+    destinationFolder: "/Users/JohnMoshakis/Documents/develop/TrainOutput",
+    architectures: standardOSXArchitectures()
+});

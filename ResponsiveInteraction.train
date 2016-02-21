@@ -1,0 +1,20 @@
+var hi = "/Users/JohnMoshakis/Documents/develop/HeaderImporter/HeaderImporter.exe";
+var fxBaseFolder = '/Users/JohnMoshakis/Documents/Elements/Nougat SDKs'; // where the SDK .fx files are
+var developerFolder = '/Applications/Xcode.app/Contents/Developer';
+
+include("generate.train");
+
+iOSSdkVersion="9.2" ;  // optionally, pick a target SDK
+OSXSdkVersion="10.11"; // optionally, pick a target SDK
+
+processiOSLibrary({
+    library: "libResponsiveInteractioniOS.a",
+    headers: ["FeBasicAnimationBlock.h;FeRadialButton.h;FeRippleButton.h;UIButton+ResponsiveInteraction.h;UIColor+flat.h;UILabel+ResponsiveInteraction.h"],
+    explicitHeaders: true,
+    link: ["ResponsiveInteractioniOS"],
+    includePaths: ["/Users/JohnMoshakis/Documents/develop/Xcode/Responsive-Interaction-Control/ResponsiveInteractioniOS;/Users/JohnMoshakis/Documents/develop/Xcode/Responsive-Interaction-Control/FeResponsiveInteraction/Class"],
+    namespacePrefix: "ResponsiveInteraction",
+    destinationFolder: "/Users/JohnMoshakis/Documents/develop/TrainOutput",
+    architectures: standardiOSArchitectures()
+});
+

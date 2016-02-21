@@ -1,0 +1,33 @@
+var hi = "/Users/JohnMoshakis/Documents/develop/HeaderImporter/HeaderImporter.exe";
+var fxBaseFolder = '/Users/JohnMoshakis/Documents/Elements/Nougat SDKs'; // where the SDK .fx files are
+var developerFolder = '/Applications/Xcode.app/Contents/Developer';
+
+include("generate.train");
+
+iOSSdkVersion="9.2" ;  // optionally, pick a target SDK
+OSXSdkVersion="10.11"; // optionally, pick a target SDK
+
+processOSXLibrary({
+    library: "libOAuth2ClientOSX.a",
+    headers: ["NSData+NXOAuth2.h;NSString+NXOAuth2.h;NSURL+NXOAuth2.h;NXOAuth2AccessToken.h;NXOAuth2Account.h;NXOAuth2AccountStore.h;NXOAuth2Client.h;NXOAuth2ClientDelegate.h;NXOAuth2Connection.h;NXOAuth2ConnectionDelegate.h;NXOAuth2Constants.h;NXOAuth2FileStreamWrapper.h;NXOAuth2PostBodyPart.h;NXOAuth2PostBodyStream.h;NXOAuth2Request.h;NXOAuth2TrustDelegate.h
+"],
+    explicitHeaders: true,
+    link: ["OAuth2ClientOSX"],
+    includePaths: ["/Users/JohnMoshakis/Documents/develop/Xcode/OAuth2Client/Sources;/Users/JohnMoshakis/Documents/develop/Xcode/OAuth2Client/Sources/OAuth2Client"],
+    namespacePrefix: "OAuth2Client",
+    destinationFolder: "/Users/JohnMoshakis/Documents/develop/TrainOutput",
+    architectures: standardOSXArchitectures()
+});
+
+processiOSLibrary({
+    library: "libOAuth2Client.a",
+    headers: ["NSData+NXOAuth2.h;NSString+NXOAuth2.h;NSURL+NXOAuth2.h;NXOAuth2AccessToken.h;NXOAuth2Account.h;NXOAuth2AccountStore.h;NXOAuth2Client.h;NXOAuth2ClientDelegate.h;NXOAuth2Connection.h;NXOAuth2ConnectionDelegate.h;NXOAuth2Constants.h;NXOAuth2FileStreamWrapper.h;NXOAuth2PostBodyPart.h;NXOAuth2PostBodyStream.h;NXOAuth2Request.h;NXOAuth2TrustDelegate.h
+"],
+    explicitHeaders: true,
+    link: ["OAuth2Client"],
+    includePaths: ["/Users/JohnMoshakis/Documents/develop/Xcode/OAuth2Client/Sources;/Users/JohnMoshakis/Documents/develop/Xcode/OAuth2Client/Sources/OAuth2Client"],
+    namespacePrefix: "OAuth2Client",
+    destinationFolder: "/Users/JohnMoshakis/Documents/develop/TrainOutput",
+    architectures: standardiOSArchitectures()
+});
+
