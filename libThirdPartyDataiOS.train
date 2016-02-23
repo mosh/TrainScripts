@@ -1,0 +1,19 @@
+var hi = "/Users/JohnMoshakis/Documents/develop/HeaderImporter/HeaderImporter.exe";
+var fxBaseFolder = '/Users/JohnMoshakis/Documents/Elements/Nougat SDKs'; // where the SDK .fx files are
+var developerFolder = '/Applications/Xcode.app/Contents/Developer';
+
+include("generate.train");
+
+iOSSdkVersion="9.2" ;  // optionally, pick a target SDK
+OSXSdkVersion="10.11"; // optionally, pick a target SDK
+
+processiOSLibrary({
+    library: "libThirdPartyiOS.a",
+    headers: ["ISO8601DateFormatter.h;SBFlatDatePicker.h;SBFlatDatePickerDelegate.h"],
+    explicitHeaders: true,
+    link: ["ThirdPartyiOS"],
+    includePaths: ["/Users/JohnMoshakis/Documents/develop/Xcode/ThirdParty"],
+    namespacePrefix: "ThirdParty",
+    destinationFolder: "/Users/JohnMoshakis/Documents/develop/TrainOutput",
+    architectures: standardiOSArchitectures()
+});

@@ -7,25 +7,30 @@ include("generate.train");
 iOSSdkVersion="9.2" ;  // optionally, pick a target SDK
 OSXSdkVersion="10.11"; // optionally, pick a target SDK
 
+processiOSLibrary({
+    library: "libRealmiOS.a",
+    headers: ["Realm/Realm.h"],
+    explicitHeaders: false,
+    link: ["RealmiOS", "tightdb-ios", "c++"],
+    includePaths: ["/Users/JohnMoshakis/Documents/develop/Xcode/realm-cocoa"],
+    namespacePrefix: "Realm",
+    destinationFolder: "/Users/JohnMoshakis/Documents/develop/TrainOutput",
+    architectures: standardiOSArchitectures()
+});
+
 processOSXLibrary({
     library: "libRealm.a",
     headers: ["Realm/Realm.h"],
-    explicitHeaders: true,
+    explicitHeaders: false,
     link: ["Realm", "tightdb", "c++"],
-    includePaths: ["/Users/JohnMoshakis/Documents/develop/Xcode/realm-cocoa/Realm"],
+    includePaths: ["/Users/JohnMoshakis/Documents/develop/Xcode/realm-cocoa"],
     namespacePrefix: "Realm",
     destinationFolder: "/Users/JohnMoshakis/Documents/develop/TrainOutput",
     architectures: standardOSXArchitectures()
 });
 
-processiOSLibrary({
-    library: "libRealmiOS.a",
-    headers: ["Realm/Realm.h"],
-    explicitHeaders: true,
-    link: ["RealmiOS", "tightdb-ios", "c++"],
-    includePaths: ["/Users/JohnMoshakis/Documents/develop/Xcode/realm-cocoa/Realm"],
-    namespacePrefix: "Realm",
-    destinationFolder: "/Users/JohnMoshakis/Documents/develop/TrainOutput",
-    architectures: standardiOSArchitectures()
-});
+
+
+
+
 
