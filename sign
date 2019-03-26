@@ -1,0 +1,1 @@
+codesign --force --sign "iPhone Developer: John Moshakis (P889E764CP)"

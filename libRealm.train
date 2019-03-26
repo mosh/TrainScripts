@@ -1,17 +1,17 @@
-var hi = "/Users/JohnMoshakis/Documents/develop/HeaderImporter/HeaderImporter.exe";
+var hi = "/Users/JohnMoshakis/Documents/Elements/HeaderImporter.exe";
 var fxBaseFolder = '/Users/JohnMoshakis/Documents/Elements/Nougat SDKs'; // where the SDK .fx files are
 var developerFolder = '/Applications/Xcode.app/Contents/Developer';
 
 include("generate.train");
 
-iOSSdkVersion="9.2" ;  // optionally, pick a target SDK
+iOSSdkVersion="11.3" ;  // optionally, pick a target SDK
 OSXSdkVersion="10.11"; // optionally, pick a target SDK
 
 processiOSLibrary({
     library: "libRealmiOS.a",
     headers: ["Realm/Realm.h"],
     explicitHeaders: false,
-    link: ["RealmiOS", "tightdb-ios", "c++"],
+    link: ["RealmiOS", "c++"],
     includePaths: ["/Users/JohnMoshakis/Documents/develop/Xcode/realm-cocoa"],
     namespacePrefix: "Realm",
     destinationFolder: "/Users/JohnMoshakis/Documents/develop/TrainOutput",
@@ -22,7 +22,7 @@ processOSXLibrary({
     library: "libRealm.a",
     headers: ["Realm/Realm.h"],
     explicitHeaders: false,
-    link: ["Realm", "tightdb", "c++"],
+    link: ["Realm", "c++"],
     includePaths: ["/Users/JohnMoshakis/Documents/develop/Xcode/realm-cocoa"],
     namespacePrefix: "Realm",
     destinationFolder: "/Users/JohnMoshakis/Documents/develop/TrainOutput",

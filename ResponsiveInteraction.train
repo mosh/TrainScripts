@@ -1,10 +1,10 @@
-var hi = "/Users/JohnMoshakis/Documents/develop/HeaderImporter/HeaderImporter.exe";
-var fxBaseFolder = '/Users/JohnMoshakis/Documents/Elements/Nougat SDKs'; // where the SDK .fx files are
+var hi = "/Users/JohnMoshakis/Documents/Elements/HeaderImporter.exe";
+var fxBaseFolder = '/Users/JohnMoshakis/Documents/Elements/Toffee SDKs'; // where the SDK .fx files are
 var developerFolder = '/Applications/Xcode.app/Contents/Developer';
 
-include("generate.train");
+include("../HeaderImporter/generate.train");
 
-iOSSdkVersion="9.2" ;  // optionally, pick a target SDK
+iOSSdkVersion="12.1" ;  // optionally, pick a target SDK
 OSXSdkVersion="10.11"; // optionally, pick a target SDK
 
 processiOSLibrary({

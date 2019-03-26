@@ -1,0 +1,15 @@
+var hi = "/Users/JohnMoshakis/Documents/Elements/HeaderImporter.exe";
+var fxBaseFolder = '/Users/JohnMoshakis/Documents/Elements/Toffee SDKs'; // where the SDK .fx files are
+var developerFolder = '/Applications/Xcode.app/Contents/Developer';
+
+include("../HeaderImporter/generate.train");
+
+iOSSdkVersion="12.1" ;  // optionally, pick a target SDK
+
+
+processiOSFramework({
+    framework: "/Users/JohnMoshakis/Documents/develop/TrainScripts/PureLayout/Debug-iphoneos/PureLayout.framework",
+    link: [],
+    //namespacePrefix: "PureLayout",
+    destinationFolder: "/Users/JohnMoshakis/Documents/develop/TrainOutput"
+});

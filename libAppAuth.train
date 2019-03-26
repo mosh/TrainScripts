@@ -1,0 +1,27 @@
+var hi = "/Users/JohnMoshakis/Documents/develop/HeaderImporter/HeaderImporter.exe";
+var fxBaseFolder = '/Users/JohnMoshakis/Documents/Elements/Toffee SDKs'; // where the SDK .fx files are
+var developerFolder = '/Applications/Xcode.app/Contents/Developer';
+var generateFile = '/Users/JohnMoshakis/Documents/develop/HeaderImporter/generate.train';
+
+include(generateFile);
+
+iOSSdkVersion="12.1" ;  // optionally, pick a target SDK
+OSXSdkVersion="10.11"; // optionally, pick a target SDK
+
+processiOSLibrary({
+    library: "libAppAuth.a",
+    headers: ["AppAuth.h"],
+    explicitHeaders: false,
+    link: ["AppAuth"],
+    includePaths: ["/Users/JohnMoshakis/Documents/develop/Xcode/AppAuth-iOS/Source","/Users/JohnMoshakis/Documents/develop/Xcode/AppAuth-iOS/Source/iOS"],
+    namespacePrefix: "AppAuth",
+    destinationFolder: "/Users/JohnMoshakis/Documents/develop/TrainOutput",
+    architectures: standardiOSArchitectures()
+});
+
+
+
+
+
+
+

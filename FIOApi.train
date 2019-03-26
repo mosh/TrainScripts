@@ -1,0 +1,20 @@
+var hi = "/Users/JohnMoshakis/Documents/develop/HeaderImporter/HeaderImporter.exe";
+var fxBaseFolder = '/Users/JohnMoshakis/Documents/Elements/Toffee SDKs'; // where the SDK .fx files are
+var developerFolder = '/Applications/Xcode.app/Contents/Developer';
+
+include("../HeaderImporter/generate.train");
+
+iOSSdkVersion="11.0" ;  // optionally, pick a target SDK
+OSXSdkVersion="10.11"; // optionally, pick a target SDK
+
+processiOSLibrary({
+    library: "libFIOApi.a",
+    headers: ["libFIOApi.h;RequestOperation.h;ConcurrentOperation.h;FIORequestOperation.h;FIORequestBlock.h;FIORequestOperationDelegate.h;FIOAPIClient.h;FIORequestQueue.h;FIORequestBlockOperation.h;FIORequestDelegateOperation.h"],
+    explicitHeaders: true,
+    includeFX: ["MobileCoreServices.fx","SystemConfiguration.fx;Security.fx"],
+    link: ["FIOApi"],
+    includePaths: ["/Users/JohnMoshakis/Documents/develop/Xcode/libFIOApi/libFIOApi/libFIOApi;/Users/JohnMoshakis/Documents/develop/Xcode/libFIOApi/libFIOApi/libFIOApi/classes"],
+    namespacePrefix: "FIOApi",
+    destinationFolder: "/Users/JohnMoshakis/Documents/develop/TrainOutput",
+    architectures: standardiOSArchitectures()
+});

@@ -1,0 +1,15 @@
+var hi = "/Users/JohnMoshakis/Documents/develop/HeaderImporter/HeaderImporter.exe";
+var fxBaseFolder = '/Users/JohnMoshakis/Documents/Elements/Toffee SDKs'; // where the SDK .fx files are
+var developerFolder = '/Applications/Xcode.app/Contents/Developer';
+
+include("../HeaderImporter/generate.train");
+
+iOSSdkVersion="10.2" ;  // optionally, pick a target SDK
+
+
+processiOSFramework({
+    framework: "/Users/JohnMoshakis/Documents/develop/MailCore/MailCore.framework",
+    link: [],
+    namespacePrefix: "",
+    destinationFolder: "/Users/JohnMoshakis/Documents/develop/TrainOutput"
+});

@@ -1,0 +1,17 @@
+var hi = "/Users/JohnMoshakis/Documents/develop/HeaderImporter/HeaderImporter.exe";
+var fxBaseFolder = '/Users/JohnMoshakis/Documents/Elements/Toffee SDKs'; // where the SDK .fx files are
+var developerFolder = '/Applications/Xcode.app/Contents/Developer';
+
+include("../HeaderImporter/generate.train");
+
+iOSSdkVersion="10.1" ;  // optionally, pick a target SDK
+
+
+processiOSFramework({
+    framework: "/Users/JohnMoshakis/Documents/develop/Xcode/Masonry/Build/iOS/Masonry.framework",
+    link: [],
+    namespacePrefix: "Masonry",
+    destinationFolder: "/Users/JohnMoshakis/Documents/develop/TrainOutput",
+    //headers: ["SomeClass.h"], // default is just the header named after the framework ("main header")
+    //allHeaders: true // import all headers, NOT just the main one
+});

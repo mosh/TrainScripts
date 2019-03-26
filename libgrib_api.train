@@ -1,0 +1,19 @@
+var hi = "/Users/JohnMoshakis/Documents/develop/HeaderImporter/HeaderImporter.exe";
+var fxBaseFolder = '/Users/JohnMoshakis/Documents/Elements/Nougat SDKs'; // where the SDK .fx files are
+var developerFolder = '/Applications/Xcode.app/Contents/Developer';
+
+include("../HeaderImporter/generate.train");
+
+iOSSdkVersion="9.2" ;  // optionally, pick a target SDK
+OSXSdkVersion="10.11"; // optionally, pick a target SDK
+
+processOSXLibrary({
+    library: "libgrib_api.a",
+    headers: ["grib_api.h"],
+    explicitHeaders: true,
+    link: ["grib_api"],
+    includePaths: ["/Users/JohnMoshakis/Documents/develop/grib_api_1.14.0/usr/local/include"],
+    namespacePrefix: "GribApi",
+    destinationFolder: "/Users/JohnMoshakis/Documents/develop/TrainOutput",
+    architectures: standardOSXArchitectures()
+});
