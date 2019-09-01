@@ -1,9 +1,8 @@
 var hi = "/Users/JohnMoshakis/Documents/Elements/HeaderImporter.exe";
 var fxBaseFolder = '/Users/JohnMoshakis/Documents/Elements/Toffee SDKs'; // where the SDK .fx files are
 var developerFolder = '/Applications/Xcode.app/Contents/Developer';
-var targetFolder = libraryBaseFolder;
-
 include("/Users/JohnMoshakis/Documents/Elements/generate.train");
+var targetFolder = libraryBaseFolder;
 
 iOSSdkVersion="12.1" ;  // optionally, pick a target SDK
 
